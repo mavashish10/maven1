@@ -11,3 +11,178 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2021-03-04 15:29:30.039
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-03-04 16:06:41.820
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-03-04 16:06:41.836
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.egit.ui 4 0 2021-03-04 16:09:02.445
+!MESSAGE https:github.com/mavashish10/maven1.git: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: https:github.com/mavashish10/maven1.git: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+	at org.eclipse.jgit.api.LsRemoteCommand.execute(LsRemoteCommand.java:222)
+	at org.eclipse.jgit.api.LsRemoteCommand.call(LsRemoteCommand.java:161)
+	at org.eclipse.egit.core.op.ListRemoteOperation.run(ListRemoteOperation.java:116)
+	at org.eclipse.egit.ui.internal.components.AsynchronousListOperation.run(AsynchronousListOperation.java:78)
+	at org.eclipse.egit.ui.internal.dialogs.CancelableFuture$1.run(CancelableFuture.java:280)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.jgit.errors.TransportException: https:github.com/mavashish10/maven1.git: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:258)
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:1)
+	at org.eclipse.jgit.transport.SshTransport.getSession(SshTransport.java:140)
+	at org.eclipse.jgit.transport.TransportGitSsh$SshFetchConnection.<init>(TransportGitSsh.java:280)
+	at org.eclipse.jgit.transport.TransportGitSsh.openFetch(TransportGitSsh.java:170)
+	at org.eclipse.jgit.api.LsRemoteCommand.execute(LsRemoteCommand.java:200)
+	... 5 more
+Caused by: org.apache.sshd.common.SshException: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+	at org.apache.sshd.common.future.AbstractSshFuture.lambda$verifyResult$1(AbstractSshFuture.java:132)
+	at org.apache.sshd.common.future.AbstractSshFuture.formatExceptionMessage(AbstractSshFuture.java:187)
+	at org.apache.sshd.common.future.AbstractSshFuture.verifyResult(AbstractSshFuture.java:132)
+	at org.apache.sshd.client.future.DefaultConnectFuture.verify(DefaultConnectFuture.java:42)
+	at org.apache.sshd.client.future.DefaultConnectFuture.verify(DefaultConnectFuture.java:34)
+	at org.eclipse.jgit.transport.sshd.SshdSession.connect(SshdSession.java:117)
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:254)
+	... 10 more
+Caused by: java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:130)
+	at java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.implConnect(UnixAsynchronousSocketChannelImpl.java:306)
+	at java.base/sun.nio.ch.AsynchronousSocketChannelImpl.connect(AsynchronousSocketChannelImpl.java:210)
+	at org.apache.sshd.common.io.nio2.Nio2Connector.connect(Nio2Connector.java:71)
+	at org.eclipse.jgit.internal.transport.sshd.JGitSshClient.connect(JGitSshClient.java:157)
+	at org.apache.sshd.client.SshClient.connect(SshClient.java:484)
+	at org.apache.sshd.client.session.ClientSessionCreator.connect(ClientSessionCreator.java:62)
+	at org.apache.sshd.client.session.ClientSessionCreator.connect(ClientSessionCreator.java:44)
+	at org.eclipse.jgit.transport.sshd.SshdSession.connect(SshdSession.java:116)
+	... 11 more
+
+!ENTRY org.eclipse.egit.core 4 0 2021-03-04 16:09:47.406
+!MESSAGE An exception occurred during push on URI https:github.com/mavashish10/maven1.git: https:github.com/mavashish10/maven1.git: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https:github.com/mavashish10/maven1.git: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:258)
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:1)
+	at org.eclipse.jgit.transport.SshTransport.getSession(SshTransport.java:140)
+	at org.eclipse.jgit.transport.TransportGitSsh$SshPushConnection.<init>(TransportGitSsh.java:339)
+	at org.eclipse.jgit.transport.TransportGitSsh.openPush(TransportGitSsh.java:176)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:160)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1368)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:191)
+	at org.eclipse.egit.ui.internal.push.ConfirmationPage$2.run(ConfirmationPage.java:211)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+Caused by: org.apache.sshd.common.SshException: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+	at org.apache.sshd.common.future.AbstractSshFuture.lambda$verifyResult$1(AbstractSshFuture.java:132)
+	at org.apache.sshd.common.future.AbstractSshFuture.formatExceptionMessage(AbstractSshFuture.java:187)
+	at org.apache.sshd.common.future.AbstractSshFuture.verifyResult(AbstractSshFuture.java:132)
+	at org.apache.sshd.client.future.DefaultConnectFuture.verify(DefaultConnectFuture.java:42)
+	at org.apache.sshd.client.future.DefaultConnectFuture.verify(DefaultConnectFuture.java:34)
+	at org.eclipse.jgit.transport.sshd.SshdSession.connect(SshdSession.java:117)
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:254)
+	... 9 more
+Caused by: java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:130)
+	at java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.implConnect(UnixAsynchronousSocketChannelImpl.java:306)
+	at java.base/sun.nio.ch.AsynchronousSocketChannelImpl.connect(AsynchronousSocketChannelImpl.java:210)
+	at org.apache.sshd.common.io.nio2.Nio2Connector.connect(Nio2Connector.java:71)
+	at org.eclipse.jgit.internal.transport.sshd.JGitSshClient.connect(JGitSshClient.java:157)
+	at org.apache.sshd.client.SshClient.connect(SshClient.java:484)
+	at org.apache.sshd.client.session.ClientSessionCreator.connect(ClientSessionCreator.java:62)
+	at org.apache.sshd.client.session.ClientSessionCreator.connect(ClientSessionCreator.java:44)
+	at org.eclipse.jgit.transport.sshd.SshdSession.connect(SshdSession.java:116)
+	... 10 more
+
+!ENTRY org.eclipse.egit.core 4 0 2021-03-04 16:09:58.997
+!MESSAGE An exception occurred during push on URI https:github.com/mavashish10/maven1.git: https:github.com/mavashish10/maven1.git: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https:github.com/mavashish10/maven1.git: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:258)
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:1)
+	at org.eclipse.jgit.transport.SshTransport.getSession(SshTransport.java:140)
+	at org.eclipse.jgit.transport.TransportGitSsh$SshPushConnection.<init>(TransportGitSsh.java:339)
+	at org.eclipse.jgit.transport.TransportGitSsh.openPush(TransportGitSsh.java:176)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:160)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1368)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:191)
+	at org.eclipse.egit.ui.internal.push.ConfirmationPage$2.run(ConfirmationPage.java:211)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+Caused by: org.apache.sshd.common.SshException: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+	at org.apache.sshd.common.future.AbstractSshFuture.lambda$verifyResult$1(AbstractSshFuture.java:132)
+	at org.apache.sshd.common.future.AbstractSshFuture.formatExceptionMessage(AbstractSshFuture.java:187)
+	at org.apache.sshd.common.future.AbstractSshFuture.verifyResult(AbstractSshFuture.java:132)
+	at org.apache.sshd.client.future.DefaultConnectFuture.verify(DefaultConnectFuture.java:42)
+	at org.apache.sshd.client.future.DefaultConnectFuture.verify(DefaultConnectFuture.java:34)
+	at org.eclipse.jgit.transport.sshd.SshdSession.connect(SshdSession.java:117)
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:254)
+	... 9 more
+Caused by: java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:130)
+	at java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.implConnect(UnixAsynchronousSocketChannelImpl.java:306)
+	at java.base/sun.nio.ch.AsynchronousSocketChannelImpl.connect(AsynchronousSocketChannelImpl.java:210)
+	at org.apache.sshd.common.io.nio2.Nio2Connector.connect(Nio2Connector.java:71)
+	at org.eclipse.jgit.internal.transport.sshd.JGitSshClient.connect(JGitSshClient.java:157)
+	at org.apache.sshd.client.SshClient.connect(SshClient.java:484)
+	at org.apache.sshd.client.session.ClientSessionCreator.connect(ClientSessionCreator.java:62)
+	at org.apache.sshd.client.session.ClientSessionCreator.connect(ClientSessionCreator.java:44)
+	at org.eclipse.jgit.transport.sshd.SshdSession.connect(SshdSession.java:116)
+	... 10 more
+
+!ENTRY org.eclipse.egit.core 4 0 2021-03-04 17:08:24.223
+!MESSAGE An exception occurred during push on URI https:github.com/mavashish10/maven1.git: https:github.com/mavashish10/maven1.git: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https:github.com/mavashish10/maven1.git: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:258)
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:1)
+	at org.eclipse.jgit.transport.SshTransport.getSession(SshTransport.java:140)
+	at org.eclipse.jgit.transport.TransportGitSsh$SshPushConnection.<init>(TransportGitSsh.java:339)
+	at org.eclipse.jgit.transport.TransportGitSsh.openPush(TransportGitSsh.java:176)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:160)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1368)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:191)
+	at org.eclipse.egit.ui.internal.push.ConfirmationPage$2.run(ConfirmationPage.java:211)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+Caused by: org.apache.sshd.common.SshException: DefaultConnectFuture[ashish@https:22]: Failed (UnresolvedAddressException) to execute: null
+	at org.apache.sshd.common.future.AbstractSshFuture.lambda$verifyResult$1(AbstractSshFuture.java:132)
+	at org.apache.sshd.common.future.AbstractSshFuture.formatExceptionMessage(AbstractSshFuture.java:187)
+	at org.apache.sshd.common.future.AbstractSshFuture.verifyResult(AbstractSshFuture.java:132)
+	at org.apache.sshd.client.future.DefaultConnectFuture.verify(DefaultConnectFuture.java:42)
+	at org.apache.sshd.client.future.DefaultConnectFuture.verify(DefaultConnectFuture.java:34)
+	at org.eclipse.jgit.transport.sshd.SshdSession.connect(SshdSession.java:117)
+	at org.eclipse.jgit.transport.sshd.SshdSessionFactory.getSession(SshdSessionFactory.java:254)
+	... 9 more
+Caused by: java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:130)
+	at java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.implConnect(UnixAsynchronousSocketChannelImpl.java:306)
+	at java.base/sun.nio.ch.AsynchronousSocketChannelImpl.connect(AsynchronousSocketChannelImpl.java:210)
+	at org.apache.sshd.common.io.nio2.Nio2Connector.connect(Nio2Connector.java:71)
+	at org.eclipse.jgit.internal.transport.sshd.JGitSshClient.connect(JGitSshClient.java:157)
+	at org.apache.sshd.client.SshClient.connect(SshClient.java:484)
+	at org.apache.sshd.client.session.ClientSessionCreator.connect(ClientSessionCreator.java:62)
+	at org.apache.sshd.client.session.ClientSessionCreator.connect(ClientSessionCreator.java:44)
+	at org.eclipse.jgit.transport.sshd.SshdSession.connect(SshdSession.java:116)
+	... 10 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-03-04 17:15:01.304
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-03-04 17:15:01.306
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+!SESSION 2021-03-04 17:16:21.054 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=11.0.10
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ui 4 4 2021-03-04 17:16:26.361
+!MESSAGE Plug-in 'org.eclipse.egit.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.search.menu' is invalid): org.eclipse.egit.ui.actions.OpenCommitSearchPage
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-03-04 17:17:08.202
+!MESSAGE close() called when useCnt is already zero for Repository[/home/ashish/git/maven1/.git]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-03-04 17:18:43.004
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-03-04 17:18:43.017
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
